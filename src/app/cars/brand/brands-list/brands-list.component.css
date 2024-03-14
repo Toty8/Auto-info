@@ -8,7 +8,7 @@
 }
 
 .container h2, p {
-    padding: 0.3em 0 0.2em;
+    padding: 0.1em 0 0.2em;
     margin: 0;
 }
 
@@ -31,11 +31,15 @@
     width: 100%;
 }
 
-.columns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.7rem;
-}
+.image {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}​
 
 .subscribers {
     text-align: right;
