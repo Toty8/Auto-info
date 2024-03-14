@@ -136,10 +136,7 @@ body {
 .container {
     width: 90%;
     margin: auto;
-    padding-bottom: 4.5em;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    padding-bottom: 1.5em;
 }
 
 h2 {
@@ -158,6 +155,16 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
 }
 
 @media (min-width: 800px) {
