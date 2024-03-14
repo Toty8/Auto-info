@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { MainComponent } from './main/main.component';
 import { BrandsListComponent } from './cars/brand/brands-list/brands-list.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrandsListComponent } from './cars/brand/brands-list/brands-list.compon
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
