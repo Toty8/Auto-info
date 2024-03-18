@@ -9,20 +9,22 @@ import { BrandsListComponent } from './brand/brands-list/brands-list.component';
 import {HttpClientModule} from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { BrandModule } from './brand/brand.module';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandsListComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
     UserModule,
-    BrandModule
+    BrandModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
