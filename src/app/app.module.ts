@@ -5,22 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { MainComponent } from './main/main.component';
-import { BrandsListComponent } from './cars/brand/brands-list/brands-list.component';
+import { BrandsListComponent } from './brand/brands-list/brands-list.component';
 import {HttpClientModule} from '@angular/common/http'
+import { UserModule } from './user/user.module';
+import { BrandModule } from './brand/brand.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    BrandsListComponent
+    BrandsListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HttpClientModule 
+    HttpClientModule,
+    UserModule,
+    BrandModule
   ],
   providers: [],
   bootstrap: [AppComponent]
