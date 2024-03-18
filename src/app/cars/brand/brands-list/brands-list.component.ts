@@ -9,12 +9,16 @@ import { Brand } from 'src/app/types/brand';
 })
 export class BrandsListComponent implements OnInit{
 
-  brands: Brand[] | null = [];
+  brands: Brand[] = [];
   isLoading: boolean = true;
 
   constructor(private api: ApiService){}
 
   ngOnInit(): void {
+    this.fetchBrands();
+  }
+
+  fetchBrands(){
     this.api.getBrands().subscribe((brands) => {
       console.log(brands);
       this.brands = brands;

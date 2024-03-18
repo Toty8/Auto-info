@@ -5,6 +5,7 @@
 
 html {
     box-sizing: border-box;
+    background-color: antiquewhite;
 }
 
 *, *:before, *:after {
@@ -165,6 +166,12 @@ button:hover {
     margin-left: -50px;
     width: 100px;
     height: 100px;
+}
+
+.noData{
+    color: darkred;
+    text-align: center;
+    padding: 150px 0;
 }
 
 @media (min-width: 800px) {

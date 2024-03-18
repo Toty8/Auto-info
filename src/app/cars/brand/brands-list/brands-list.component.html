@@ -2,7 +2,10 @@
     <div class="loader" *ngIf="isLoading">
         <app-loader />
     </div>
-    <div *ngIf="!isLoading" class="title">       
+    <div *ngIf="!isLoading && brands" class="title">    
+        <div class="noData" *ngIf="brands.length == 0">
+            <h1>There are no brands yet!</h1>
+        </div>   
         <div *ngFor="let brand of brands" class="container">
             <a href="#" class="name-wrapper">
                 <div class="name">
