@@ -11,24 +11,23 @@ header ul {
     margin: auto;
 }
 
-.mini-navbar ul {
-    border: 2px solid black;
-    border-radius: 0.3em;
-    padding-left: 0;
-    width: 100%;
-    background-color: darkblue;
-}
-
 header li {
-    list-style: none;
+    list-style-position: inside;
     margin: .35em;
     padding: 0 .95em;
 }
 
 header a {
     text-decoration: none;
-    color: white;
     cursor: pointer;
+}
+
+div a {
+    color: rgb(101, 0, 173);
+}
+
+nav a {
+    color: white;
 }
 
 nav {
@@ -45,6 +44,14 @@ nav {
     font-family: 'Parisienne', cursive;
     letter-spacing: .5em;
     margin: 0.5em 0;
+}
+
+.mini-navbar ul {
+    border: 2px solid black;
+    border-radius: 0.3em;
+    padding-left: 0;
+    width: 100%;
+    background-color: white;
 }
 
 .mini-navbar-wrap {
