@@ -6,7 +6,7 @@ import { AddBrandComponent } from "./add-brand/add-brand.component";
 const routes: Routes = [
     {path: 'brand', children: [
         {path: '', pathMatch: 'full', component: BrandsListComponent},
-        {path: ':brandId', component: AddBrandComponent},
+        {path: 'add-brand', component: AddBrandComponent},
     ]}
 ];
 
