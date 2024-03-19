@@ -10,11 +10,14 @@ import {HttpClientModule} from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { BrandModule } from './brand/brand.module';
 import { ErrorComponent } from './error/error.component';
+import { ModelModule } from './model/model.module';
+import { ModelsListComponent } from './model/models-list/models-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandsListComponent,
+    ModelsListComponent,
     ErrorComponent,
   ],
   imports: [
@@ -24,6 +27,7 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     UserModule,
     BrandModule,
+    ModelModule,
     AppRoutingModule
   ],
   providers: [],
