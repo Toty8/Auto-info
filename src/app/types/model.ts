@@ -1,11 +1,11 @@
-import { Model } from "./model"
 import { User } from "./user"
 
-export interface Brand{
+export interface Model{
     imageUrl: string
-    models: Model[]
+    generations: string[]
     name: string
     __v: number
     _id: string
     userId: User
+    brand: string
 }
