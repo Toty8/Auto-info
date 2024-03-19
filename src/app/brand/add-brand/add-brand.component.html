@@ -6,7 +6,7 @@
         <form>
             <div class="new-brand-name">
                 <label for="name">Brand name<span class="red">*</span></label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" #inputBrandName>
                 <p class="error">
                     Brand name is required.
                 </p>
@@ -16,7 +16,7 @@
             </div>
             <div class="new-brand-image">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
-                <input type="text" name="imageUrl" id="imageUrl">
+                <input type="text" name="imageUrl" id="imageUrl" #inputBrandImageUrl>
                 <p class="error">
                     Image Url is required.
                 </p>
@@ -26,7 +26,7 @@
             </div>
             <div class="new-brand-buttons">
                 <button class="cancel">Cancel</button>
-                <button class="public">Create</button>
+                <button class="public" (click)="addBrand($event, inputBrandName.value, inputBrandImageUrl.value)">Create</button>
             </div>
 
         </form>
