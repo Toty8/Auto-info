@@ -15,4 +15,16 @@ export class ApiService {
 
     return this.http.get<Brand[]>(`${apiUrl}/brands`);
   }
+
+  getBrand(id: string){
+    const { apiUrl } = environment;
+
+    return this.http.get<Brand>(`${apiUrl}/brands/${id}`);
+  }
+
+  createBrand(name: string, imageUrl: string){
+    const { apiUrl } = environment;
+    const payload = {name, imageUrl}
+    return this.http.post<Brand>(`${apiUrl}/brands`, payload);
+  }
 }
