@@ -1,6 +1,6 @@
 <header>
     <div class="mini-navbar-wrap">
-        <div class="logo-wrap">
+        <div (click)="navigate()" class="logo-wrap">
             <p class="logo"><span class="logo">Auto Info</span></p>
         </div>
         <div *ngIf="!isLoggedIn" class="mini-navbar">
@@ -13,11 +13,18 @@
                 </li>
             </ul>
         </div>
+        <div *ngIf="isLoggedIn" class="mini-navbar">
+            <ul>
+                <li (click)="logout()">
+                    <a>Logout</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <nav>
         <ul>
             <li>
-                <a href="/brand/add-brand">Create Brand</a>
+                <a href="/brands/add-brand">Create Brand</a>
             </li>
             <li>
                 <a href="#">Create Model</a>
