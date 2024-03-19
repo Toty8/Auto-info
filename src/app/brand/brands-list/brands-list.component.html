@@ -7,13 +7,16 @@
             <h1>There are no brands yet!</h1>
         </div>   
         <div *ngFor="let brand of brands" class="container">
-            <a href="#" class="name-wrapper">
+            <a [routerLink]="brand._id" class="name-wrapper">
                 <div class="name">
                     <div class="normal">
                         <h2>{{brand.name}}</h2>
                     </div>
                     <div>
                         <img class="image" src="{{brand.imageUrl}}">
+                    </div>
+                    <div>
+                        <h2>Last Edited by: {{brand.userId.username}}</h2>
                     </div>
                 </div>
             </a>

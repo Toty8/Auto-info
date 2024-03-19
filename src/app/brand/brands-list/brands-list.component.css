@@ -44,28 +44,6 @@
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
-}​
-
-.subscribers {
-    text-align: right;
-    flex-basis: 25%;
-}
-
-.subscribers button {
-    padding: 0.2rem 0.5rem;
-    border: none;
-    border-radius: 0.3rem;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-}
-
-.subscribe {
-    background-color: green;
-}
-
-.unsubscribe {
-    background-color: red;
 }
 
 time {

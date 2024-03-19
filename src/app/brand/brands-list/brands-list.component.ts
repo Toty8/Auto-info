@@ -20,10 +20,8 @@ export class BrandsListComponent implements OnInit{
 
   fetchBrands(){
     this.api.getBrands().subscribe((brands) => {
-      console.log(brands);
       this.brands = brands;
       this.isLoading = false;
     });
   }
-
 }
