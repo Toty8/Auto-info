@@ -1,5 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, booleanAttribute} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+import { IMAGE_URL } from 'src/app/constants';
 
 @Component({
   selector: 'app-add-brand',
@@ -7,12 +9,15 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./add-brand.component.css']
 })
 export class AddBrandComponent {
-  
+
+  imageURLRegEx = IMAGE_URL;
   constructor(private apiService: ApiService){}
 
-  addBrand(ev: Event, brandName: string, brandImageUrl: string){
-    ev.preventDefault();
-    
-    this.apiService.createBrand(brandName, brandImageUrl).subscribe();
+  addBrand(form: NgForm){
+
+    if(form.invalid){
+      return;
+    }
+    //this.apiService.createBrand(brandName, brandImageUrl).subscribe();
   }
 }

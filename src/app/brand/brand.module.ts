@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrandRoutingModule } from './brand-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { AddBrandComponent } from './add-brand/add-brand.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { AddBrandComponent } from './add-brand/add-brand.component';
   imports: [
     CommonModule,
     BrandRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class BrandModule { }
