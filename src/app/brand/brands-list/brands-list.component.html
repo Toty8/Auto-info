@@ -7,10 +7,10 @@
             <h1>There are no brands yet!</h1>
         </div>   
         <div *ngFor="let brand of brands" class="container">
-            <a [routerLink]="brand._id" class="name-wrapper">
-                <div class="name">
-                    <div class="normal">
-                        <h2>{{brand.name}}</h2>
+            <div class="name-wrapper">
+                <div class="brand-item">
+                    <div [routerLink]="brand._id">
+                        <h2 class="brandLink">{{brand.name}}</h2>
                     </div>
                     <div>
                         <img class="image" src="{{brand.imageUrl}}">
@@ -18,8 +18,11 @@
                     <div>
                         <h2>Last Edited by: {{brand.userId.username}}</h2>
                     </div>
+                    <div class="edit-brand-buttons">
+                        <button class="edit-btn" [routerLink]="[brand._id, 'edit']">Edit</button>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </main>

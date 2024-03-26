@@ -28,7 +28,7 @@
                 </ng-container>
             </div>
             <div class="new-brand-buttons">
-                <button class="public">Create</button>
+                <button [disabled]="form.invalid">Create</button>
             </div>
 
         </form>

@@ -1,4 +1,4 @@
-import { Component, booleanAttribute} from '@angular/core';
+import { Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { IMAGE_URL } from 'src/app/constants';
@@ -18,6 +18,7 @@ export class AddBrandComponent {
     if(form.invalid){
       return;
     }
+    console.log(form.value); 
     //this.apiService.createBrand(brandName, brandImageUrl).subscribe();
   }
 }
