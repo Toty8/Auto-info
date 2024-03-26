@@ -1,30 +1,35 @@
 <div class="container">
-    <form class="login" action="" method="post">
+    <form class="login" #form="ngForm" (ngSubmit)="login(form)">
 
         <fieldset>
             <h2>Login Form</h2>
 
             <p class="field field-icon">
-                <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com" #inputEmail>
+                <input class="input-error" type="email" name="email" id="email" placeholder="Your email here..." ngModel #inputEmail="ngModel" required [appEmailDomain]="emailDomains">
             </p>
-            <p class="error">
-                Email is required!
-            </p>
-            <!-- <p class="error">
-                Email is not valid!
-            </p> -->
+
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['required']">
+                    Email is required!
+                </p>
+                <p class="error" *ngIf="inputEmail.errors?.['emailValidator']">
+                    Email is not valid!
+                </p>
+            </ng-container>
 
             <p class="field field-icon">
-                <input type="password" name="password" id="password" placeholder="******" #inputPassword>
+                <input type="password" name="password" id="password" placeholder="******" ngModel #inputPassword="ngModel" required minlength="5">
             </p>
-            <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
+            <ng-container *ngIf="inputPassword.touched">
+                <p class="error" *ngIf="inputPassword.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+                    Password must be at least 5 characters!
+                </p>
+            </ng-container>
 
-            <button (click)="login($event, inputEmail.value, inputPassword.value)">Login</button>
+            <button>Login</button>
 
             <p class="text-center">
                 Have an account?
