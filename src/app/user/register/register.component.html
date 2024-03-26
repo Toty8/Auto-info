@@ -1,46 +1,58 @@
 <div class="container">
-    <form class="register" action="" method="post">
+    <form class="register" [formGroup]="form" (ngSubmit)="register()">
 
         <fieldset>
             <h2>Registration Form</h2>
 
-            <!-- username -->
             <p class="field field-icon">
-                <input class="input-error" type="text" name="username" id="username" placeholder="Johny">
+                <input class="input-error" type="text" name="username" id="username" placeholder="Your username here..." formControlName="username" minlength="5">
             </p>
-            <p class="error">
-                Username is required!
-            </p>
+            <ng-container *ngIf="form.get('username')?.touched">
+                <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+                    Username is required!
+                </p>
+                <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
+                    Username must be at least 5 characters!
+                </p>
+            </ng-container>
 
-            <!-- email -->
+
             <p class="field field-icon">
-                <input type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                <input type="email" name="email" id="email" placeholder="Your email here..." formControlName="email">
             </p>
-            <!-- <p class="error">
-                Email is required!
-            </p>
-            <p class="error">
-                Email is not valid!
-            </p> -->
+            <ng-container *ngIf="form.get('email')?.touched">
+                <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+                    Email is required!
+                </p>
+                <p class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">
+                    Email is not valid!
+                </p>
+            </ng-container>
 
-            <!-- password -->
-            <p class="field field-icon">
-                <input type="password" name="password" id="password" placeholder="******">
-            </p>
-            <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
+            <ng-container formGroupName="passGroup">
+                <!-- password -->
+                <p class="field field-icon">
+                    <input type="password" name="password" id="password" placeholder="******" formControlName="password">
+                </p>
+                <!-- <p class="error">
+                    Password is required!
+                </p>
+                <p class="error">
+                    Password must be at least 5 characters!
+                </p> -->
 
-            <!-- rePassword -->
-            <p class="field field-icon">
-                <input type="password" name="rePassword" id="rePassword" placeholder="******">
-            </p>
-            <!-- <p class="error">Repeat Password does not match password!</p> -->
+                <p class="field field-icon">
+                    <input type="password" name="rePassword" id="rePassword" placeholder="******" formControlName="rePassword">
+                </p>
+                <ng-container *ngIf="passGroup?.get('rePassword')?.touched">
+                    <p class="error"
+                     *ngIf="passGroup?.errors?.['matchPasswordsValidator'] ||
+                     passGroup?.get('rePassword')?.errors?.['required']"
+                     >Repeat Password does not match password!</p>
+                </ng-container>
+            </ng-container>
 
-            <button disabled>Create Account</button>
+            <button [disabled]="form.invalid">Create Account</button>
 
             <p class="text-center">
                 Have an account?
