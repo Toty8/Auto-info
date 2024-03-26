@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="edit-brand-border">
+        <div class="header-background">
+            <span>Edit Brand</span>
+        </div>
+        <form #form="ngForm" (ngSubmit)="editBrand(form)">
+            <div class="edit-brand-name">
+                <label for="name">Brand name<span class="red">*</span></label>
+                <input type="text" name="name" id="name" ngModel #inputBrandName="ngModel" required>
+
+                <ng-container *ngIf="inputBrandName.touched">
+                    <p class="error" *ngIf="inputBrandName.errors?.['required']">
+                        Brand name is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="edit-brand-image">
+                <label for="imageUrl">Image Url<span class="red">*</span></label>
+                <input type="text" name="imageUrl" id="imageUrl" ngModel #inputBrandImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
+                <ng-container *ngIf="inputBrandImageUrl.touched">
+                    <p class="error" *ngIf="inputBrandImageUrl.errors?.['required']">
+                        Image Url is required.
+                    </p>
+                    <p class="error" *ngIf="inputBrandImageUrl.errors?.['imageValidator']">
+                        Image Url must be valid.
+                    </p>
+                </ng-container>
+            </div>
+            <div class="edit-brand-buttons">
+                <button [disabled]="form.invalid">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
