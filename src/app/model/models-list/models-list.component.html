@@ -19,8 +19,10 @@
                         <h2>Last Edited by: {{model.userId.username}}</h2>
                         <h5>Account created {{model.userId.created_at | accountAge}}!</h5>
                     </div>
-                    <div class="edit-model-buttons">
-                        <button class="edit-btn" [routerLink]="[model._id, 'edit']">Edit</button>
+                    <div class="model-buttons">
+                        <!-- <button class="add-generation-btn" routerLink='/models/{{brand._id}}/add-model'>Add Generation</button> -->
+                        <button [routerLink]="[model._id, 'edit']">Edit</button>
+                        <button (click)="delete(model._id)" class="delete-btn">Delete</button>
                     </div>
                 </div>
             </div>
