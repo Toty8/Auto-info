@@ -9,16 +9,19 @@ import { BrandsListComponent } from './brand/brands-list/brands-list.component';
 import {HttpClientModule} from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { BrandModule } from './brand/brand.module';
-import { ErrorComponent } from './error/error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { ModelModule } from './model/model.module';
 import { ModelsListComponent } from './model/models-list/models-list.component';
+import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandsListComponent,
     ModelsListComponent,
-    ErrorComponent,
+    NotFoundComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { ModelsListComponent } from './model/models-list/models-list.component';
     ModelModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AppInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
