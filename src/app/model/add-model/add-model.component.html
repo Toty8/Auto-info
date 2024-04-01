@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="new-model-border">
+        <div class="header-background">
+            <span>New Model</span>
+        </div>
+        <form #form="ngForm" (ngSubmit)="addModel(form)">
+            <div class="new-model-name">
+                <label for="name">Model name<span class="red">*</span></label>
+                <input type="text" name="name" id="name" ngModel #inputModelName="ngModel" required>
+
+                <ng-container *ngIf="inputModelName.touched">
+                    <p class="error" *ngIf="inputModelName.errors?.['required']">
+                        Model name is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-model-image">
+                <label for="imageUrl">Image Url<span class="red">*</span></label>
+                <input type="text" name="imageUrl" id="imageUrl" ngModel #inputModelImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
+                <ng-container *ngIf="inputModelImageUrl.touched">
+                    <p class="error" *ngIf="inputModelImageUrl.errors?.['required']">
+                        Image Url is required.
+                    </p>
+                    <p class="error" *ngIf="inputModelImageUrl.errors?.['imageValidator']">
+                        Image Url must be valid.
+                    </p>
+                </ng-container>
+            </div>
+            <div class="new-model-buttons">
+                <button [disabled]="form.invalid">Create</button>
+            </div>
+
+        </form>
+    </div>
+</div>

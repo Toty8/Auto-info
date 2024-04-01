@@ -9,3 +9,8 @@ export interface Model{
     userId: User
     brand: string
 }
+
+export interface EditAndAddModel{
+    imageUrl: string
+    name: string
+}
