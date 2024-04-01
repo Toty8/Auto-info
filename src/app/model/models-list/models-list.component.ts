@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { BrandService } from 'src/app/brand/brand.service';
 import { Brand } from 'src/app/types/brand';
 
 @Component({
@@ -13,14 +13,14 @@ export class ModelsListComponent implements OnInit {
   brand = {} as Brand;
   isLoading: boolean = true;
 
-  constructor(private api: ApiService, private activatedRoute: ActivatedRoute){}
+  constructor(private brandService: BrandService, private activatedRoute: ActivatedRoute){}
 
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe((data) =>{
       const id = data['brandId'];
 
-      this.api.getBrand(id).subscribe((brand) => {
+      this.brandService.getBrand(id).subscribe((brand) => {
         this.brand = brand;
         this.isLoading = false;
       });

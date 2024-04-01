@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Brand } from 'src/app/types/brand';
+import { BrandService } from '../brand.service';
 
 @Component({
   selector: 'app-brands-list',
@@ -13,7 +14,7 @@ export class BrandsListComponent implements OnInit{
   brands: Brand[] = [];
   isLoading: boolean = true;
 
-  constructor(private api: ApiService, private router: Router){}
+  constructor(private api: ApiService, private brandService: BrandService, private router: Router){}
 
   ngOnInit(): void {
     this.api.getBrands().subscribe((brands) => {
@@ -23,7 +24,7 @@ export class BrandsListComponent implements OnInit{
   }
 
   delete(id: string): void{
-    this.api.deleteBrand(id).subscribe(() => {
+    this.brandService.deleteBrand(id).subscribe(() => {
       this.ngOnInit();
     });
   }

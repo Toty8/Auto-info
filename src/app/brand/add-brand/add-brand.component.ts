@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
 import { IMAGE_URL } from 'src/app/constants';
+import { BrandService } from '../brand.service';
 
 @Component({
   selector: 'app-add-brand',
@@ -12,7 +12,7 @@ import { IMAGE_URL } from 'src/app/constants';
 export class AddBrandComponent {
 
   imageURLRegEx = IMAGE_URL;
-  constructor(private apiService: ApiService, private router: Router){}
+  constructor(private brandService: BrandService, private router: Router){}
 
   addBrand(form: NgForm){
 
@@ -20,7 +20,7 @@ export class AddBrandComponent {
       return;
     }
     const {name, imageUrl} = form.value;
-    this.apiService.createBrand(name, imageUrl).subscribe(() => {
+    this.brandService.createBrand(name, imageUrl).subscribe(() => {
       this.router.navigate(['/']);
     });
   }
