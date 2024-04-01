@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
-import { Brand } from './types/brand';
+import { Brand, EditAndAddBrand } from './types/brand';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +10,26 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getBrands(){
-    const { apiUrl } = environment;
-
-    return this.http.get<Brand[]>(`${apiUrl}/brands`);
+    return this.http.get<Brand[]>('/api/brands');
   }
 
   getBrand(id: string){
-    const { apiUrl } = environment;
+    return this.http.get<Brand>(`/api/brands/${id}`);
+  }
 
-    return this.http.get<Brand>(`${apiUrl}/brands/${id}`);
+  getBrandForEdit(id: string){
+    return this.http.get<EditAndAddBrand>(`/api/brands/${id}/edit`);
+  }
+
+  editBrand(id: string, name: string, imageUrl: string){
+    return this.http.put<EditAndAddBrand>(`/api/brands/${id}/edit`, {name, imageUrl});
   }
 
   createBrand(name: string, imageUrl: string){
-    const { apiUrl } = environment;
-    const payload = {name, imageUrl}
-    return this.http.post<Brand>(`${apiUrl}/brands`, payload);
+    return this.http.post<EditAndAddBrand>('/api/brands', {name, imageUrl});
+  }
+
+  deleteBrand(id: string){
+    return this.http.delete<Brand>(`/api/brands/${id}`);
   }
 }
