@@ -17,9 +17,11 @@
                     </div>
                     <div>
                         <h2>Last Edited by: {{brand.userId.username}}</h2>
+                        <h5>Account created {{brand.userId.created_at | accountAge}}!</h5>
                     </div>
-                    <div class="edit-brand-buttons">
-                        <button class="edit-btn" [routerLink]="[brand._id, 'edit']">Edit</button>
+                    <div class="brand-buttons">
+                        <button [routerLink]="[brand._id, 'edit']">Edit</button>
+                        <button (click)="delete(brand._id)" class="delete-btn">Delete</button>
                     </div>
                 </div>
             </div>

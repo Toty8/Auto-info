@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Brand } from 'src/app/types/brand';
 
@@ -12,16 +13,18 @@ export class BrandsListComponent implements OnInit{
   brands: Brand[] = [];
   isLoading: boolean = true;
 
-  constructor(private api: ApiService){}
+  constructor(private api: ApiService, private router: Router){}
 
   ngOnInit(): void {
-    this.fetchBrands();
-  }
-
-  fetchBrands(){
     this.api.getBrands().subscribe((brands) => {
       this.brands = brands;
       this.isLoading = false;
+    });
+  }
+
+  delete(id: string): void{
+    this.api.deleteBrand(id).subscribe(() => {
+      this.ngOnInit();
     });
   }
 }

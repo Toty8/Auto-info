@@ -50,17 +50,22 @@ time {
     font-weight: bold;
 }
 
-.edit-brand-buttons {
+.brand-buttons {
     margin: 1em;
     text-align: center;
 }
 
-.edit-brand-buttons button {
+.brand-buttons button {
+    margin: 2px;
     height: 50px;
     width: 80px;
     border: 1px solid #333333;
     border-radius: 0.3em;
     font-size: 1.5em;
+}
+
+.delete-btn{
+    background-color: red;
 }
 
 .brandLink:hover{
