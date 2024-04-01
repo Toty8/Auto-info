@@ -6,9 +6,9 @@
         <form #form="ngForm" (ngSubmit)="editBrand(form)">
             <div class="edit-brand-name">
                 <label for="name">Brand name<span class="red">*</span></label>
-                <input type="text" name="name" id="name" ngModel #inputBrandName="ngModel" required>
+                <input type="text" name="name" id="name" ngModel="{{brand.name}}" #inputBrandName="ngModel" required>
 
-                <ng-container *ngIf="inputBrandName.touched">
+                <ng-container>
                     <p class="error" *ngIf="inputBrandName.errors?.['required']">
                         Brand name is required.
                     </p>
@@ -17,8 +17,8 @@
             </div>
             <div class="edit-brand-image">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
-                <input type="text" name="imageUrl" id="imageUrl" ngModel #inputBrandImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
-                <ng-container *ngIf="inputBrandImageUrl.touched">
+                <input type="text" name="imageUrl" id="imageUrl" ngModel="{{brand.imageUrl}}" #inputBrandImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
+                <ng-container>
                     <p class="error" *ngIf="inputBrandImageUrl.errors?.['required']">
                         Image Url is required.
                     </p>

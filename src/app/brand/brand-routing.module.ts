@@ -9,9 +9,9 @@ import { EditBrandComponent } from "./edit-brand/edit-brand.component";
 const routes: Routes = [
     {path: 'brands', children: [
         {path: '', pathMatch: 'full', component: BrandsListComponent},
-        {path: 'add-brand', component: AddBrandComponent, canActivate: [AuthActivate]},
+        {path: 'add-brand', canActivate: [AuthActivate], component: AddBrandComponent},
         {path: ':brandId', component: ModelsListComponent},
-        {path: ':brandId/edit', component: EditBrandComponent}
+        {path: ':brandId/edit', canActivate: [AuthActivate], component: EditBrandComponent}
     ]}
 ];
 
