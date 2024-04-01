@@ -5,7 +5,11 @@ export interface Brand{
     imageUrl: string
     models: Model[]
     name: string
-    __v: number
     _id: string
     userId: User
+}
+
+export interface EditAndAddBrand{
+    imageUrl: string
+    name: string
 }
