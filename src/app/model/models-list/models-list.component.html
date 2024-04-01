@@ -7,19 +7,23 @@
             <h1>There are no models yet!</h1>
         </div>   
         <div *ngFor="let model of brand.models" class="container">
-            <a [routerLink]="model._id" class="name-wrapper">
-                <div class="name">
-                    <div class="normal">
-                        <h2>{{brand.name}} {{model.name}}</h2>
+            <div class="name-wrapper">
+                <div class="model-item">
+                    <div [routerLink]="model._id">
+                        <h2 class="modelLink">{{brand.name}} {{model.name}}</h2>
                     </div>
                     <div>
                         <img class="image" src="{{model.imageUrl}}">
                     </div>
                     <div>
                         <h2>Last Edited by: {{model.userId.username}}</h2>
+                        <h5>Account created {{model.userId.created_at | accountAge}}!</h5>
+                    </div>
+                    <div class="edit-model-buttons">
+                        <button class="edit-btn" [routerLink]="[model._id, 'edit']">Edit</button>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </main>
