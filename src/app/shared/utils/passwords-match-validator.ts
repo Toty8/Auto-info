@@ -8,8 +8,6 @@ export function matchPasswordsValidator(passwordControlName: string, rePasswordC
         const rePassControl  = control.get(rePasswordControlName);
 
         const areMatching = passControl ?.value === rePassControl ?.value;
-
-        console.log(areMatching);
         
         return areMatching ? null : {matchPasswordsValidator: true};
     };
