@@ -12,6 +12,14 @@ export class ModelService {
   createModel(name: string, imageUrl: string, brandId: string){
     return this.http.post<EditAndAddModel>(`/api/models/${brandId}/add-model`, {name, imageUrl});
   }
+
+  getModelForEdit(id: string){
+    return this.http.get<EditAndAddModel>(`/api/models/${id}/edit`);
+  }
+
+  editModel(id: string, name: string, imageUrl: string){
+    return this.http.put<EditAndAddModel>(`/api/models/${id}/edit`, {name, imageUrl});
+  }
   
   deleteModel(id: string){
     return this.http.delete(`/api/models/${id}`);

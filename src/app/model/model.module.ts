@@ -4,13 +4,15 @@ import { SharedModule } from '../shared/shared.module';
 import { ModelRoutingModule } from './model-routing.module';
 import { AddModelComponent } from './add-model/add-model.component';
 import { FormsModule } from '@angular/forms';
+import { EditModelComponent } from './edit-model/edit-model.component';
 
 
 
 @NgModule({
   declarations: [
   
-    AddModelComponent
+    AddModelComponent,
+       EditModelComponent
   ],
   imports: [
     CommonModule,
