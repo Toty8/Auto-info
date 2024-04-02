@@ -27,4 +27,10 @@ export class GenerationsListComponent implements OnInit {
       });
     });
   }
+
+  delete(id: string): void{
+    this.generationService.deleteGeneration(id).subscribe(() => {
+      this.ngOnInit();
+    });
+  }
 }

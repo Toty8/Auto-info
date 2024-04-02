@@ -13,4 +13,7 @@ export class GenerationService {
     return this.http.post<EditAndAddGeneration>(`/api/generations/${modelId}/add-generation`, {name, imageUrl, yearStarted, yearAborted});
   }
 
+  deleteGeneration(id: string){
+    return this.http.delete(`/api/generations/${id}`);
+  }
 }
