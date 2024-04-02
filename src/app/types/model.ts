@@ -1,12 +1,14 @@
+import { Brand } from "./brand"
+import { Generation } from "./generation"
 import { User } from "./user"
 
 export interface Model{
     imageUrl: string
-    generations: string[]
+    generations: Generation[]
     name: string
     _id: string
     userId: User
-    brand: string
+    brand: Brand
 }
 
 export interface EditAndAddModel{

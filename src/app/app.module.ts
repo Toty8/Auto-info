@@ -14,6 +14,7 @@ import { ModelModule } from './model/model.module';
 import { ModelsListComponent } from './model/models-list/models-list.component';
 import { AppInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { GenerationModule } from './generation/generation.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     UserModule,
     BrandModule,
     ModelModule,
+    GenerationModule,
     AppRoutingModule
   ],
   providers: [AppInterceptorProvider],
