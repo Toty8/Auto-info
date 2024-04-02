@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="new-generation-border">
+        <div class="header-background">
+            <span>New Generation</span>
+        </div>
+        <form #form="ngForm" (ngSubmit)="addGeneration(form)">
+            <div class="new-generation-name">
+                <label for="name">Generation name<span class="red">*</span></label>
+                <input type="text" name="name" id="name" ngModel #inputGenerationName="ngModel" required>
+
+                <ng-container *ngIf="inputGenerationName.touched">
+                    <p class="error" *ngIf="inputGenerationName.errors?.['required']">
+                        Generation name is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-generation-image">
+                <label for="imageUrl">Image Url<span class="red">*</span></label>
+                <input type="text" name="imageUrl" id="imageUrl" ngModel #inputGenerationImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
+                <ng-container *ngIf="inputGenerationImageUrl.touched">
+                    <p class="error" *ngIf="inputGenerationImageUrl.errors?.['required']">
+                        Image Url is required.
+                    </p>
+                    <p class="error" *ngIf="inputGenerationImageUrl.errors?.['imageValidator']">
+                        Image Url must be valid.
+                    </p>
+                </ng-container>
+            </div>
+            <div class="new-generation-yearStarted">
+                <label for="yearStarted">Generation Year Started<span class="red">*</span></label>
+                <input type="number" name="yearStarted" id="yearStarted" ngModel #inputGenerationYearStarted="ngModel" required>
+
+                <ng-container *ngIf="inputGenerationYearStarted.touched">
+                    <p class="error" *ngIf="inputGenerationYearStarted.errors?.['required']">
+                        Generation year started is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-generation-yearAborted">
+                <label for="yearAborted">Generation Year Started (optional)</label>
+                <input type="number" name="yearAborted" id="yearAborted" ngModel #inputGenerationYearAborted="ngModel">
+            </div>
+            <div class="new-generation-buttons">
+                <button [disabled]="form.invalid">Create</button>
+            </div>
+
+        </form>
+    </div>
+</div>
