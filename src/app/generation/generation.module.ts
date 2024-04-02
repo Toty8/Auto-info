@@ -5,13 +5,15 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { AddGenerationComponent } from './add-generation/add-generation.component';
 import { GenerationsListComponent } from './generations-list/generations-list.component';
+import { EditGenerationComponent } from './edit-generation/edit-generation.component';
 
 
 
 @NgModule({
   declarations: [
     AddGenerationComponent,
-    GenerationsListComponent
+    GenerationsListComponent,
+    EditGenerationComponent
   ],
   imports: [
     CommonModule,
