@@ -1,0 +1,34 @@
+<main>
+    <div class="loader" *ngIf="isLoading">
+        <app-loader />
+    </div>
+    <div *ngIf="!isLoading && model" class="title">    
+        <div class="noData" *ngIf="model.generations.length == 0">
+            <h1>There are no generations yet!</h1>
+        </div>   
+        <div *ngFor="let generation of model.generations" class="container">
+            <div class="name-wrapper">
+                <div class="generation-item">
+                    <div [routerLink]="generation._id">
+                        <h2 class="generationLink">{{model.brand.name}} {{model.name}} {{generation.name}}</h2>
+                    </div>
+                    <div>
+                        <h5>({{generation.yearStarted}} - {{generation.yearAborted ? generation.yearAborted : 'now'}})</h5>
+                    </div>
+                    <div>
+                        <img class="image" src="{{generation.imageUrl}}">
+                    </div>
+                    <div>
+                        <h2>Last Edited by: {{generation.userId.username}}</h2>
+                        <h5>Account created {{generation.userId.created_at | accountAge}}!</h5>
+                    </div>
+                    <div class="generation-buttons">
+                        <button class="add-specification-btn" routerLink='/specifications/{{generation._id}}/add-specification'>Add Specification</button>
+                        <button routerLink='/generations/{{generation._id}}/edit'>Edit</button>
+                        <!-- <button (click)="delete(generation._id)" class="delete-btn">Delete</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
