@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EditAndAddModel } from '../types/model';
+import { EditAndAddModel, Model } from '../types/model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,10 @@ import { EditAndAddModel } from '../types/model';
 export class ModelService {
     
   constructor(private http: HttpClient) { }
+
+  getModel(id: string){
+    return this.http.get<Model>(`/api/models/${id}`);
+  }
 
   createModel(name: string, imageUrl: string, brandId: string){
     return this.http.post<EditAndAddModel>(`/api/models/${brandId}/add-model`, {name, imageUrl});

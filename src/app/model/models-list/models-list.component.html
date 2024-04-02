@@ -9,7 +9,7 @@
         <div *ngFor="let model of brand.models" class="container">
             <div class="name-wrapper">
                 <div class="model-item">
-                    <div [routerLink]="model._id">
+                    <div routerLink='/models/{{model._id}}'>
                         <h2 class="modelLink">{{brand.name}} {{model.name}}</h2>
                     </div>
                     <div>
@@ -20,7 +20,7 @@
                         <h5>Account created {{model.userId.created_at | accountAge}}!</h5>
                     </div>
                     <div class="model-buttons">
-                        <!-- <button class="add-generation-btn" routerLink='/models/{{brand._id}}/add-model'>Add Generation</button> -->
+                        <button class="add-generation-btn" routerLink='/generations/{{model._id}}/add-generation'>Add Generation</button>
                         <button routerLink='/models/{{model._id}}/edit'>Edit</button>
                         <button (click)="delete(model._id)" class="delete-btn">Delete</button>
                     </div>
