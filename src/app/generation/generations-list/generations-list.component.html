@@ -9,7 +9,7 @@
         <div *ngFor="let generation of model.generations" class="container">
             <div class="name-wrapper">
                 <div class="generation-item">
-                    <div routerLink='/generations/{{model._id}}'>
+                    <div routerLink='/generations/{{generation._id}}'>
                         <h2 class="generationLink">{{model.brand.name}} {{model.name}} {{generation.name}}</h2>
                     </div>
                     <div>

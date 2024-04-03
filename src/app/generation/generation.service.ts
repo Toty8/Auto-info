@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EditAndAddGeneration } from '../types/generation';
+import { EditAndAddGeneration, Generation } from '../types/generation';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,10 @@ import { EditAndAddGeneration } from '../types/generation';
 export class GenerationService {
     
   constructor(private http: HttpClient) { }
+
+  getGeneration(id: string){
+    return this.http.get<Generation>(`/api/generations/${id}`);
+  }
 
   createGeneration(name: string, imageUrl: string, yearStarted: number, yearAborted: number, modelId: string){
     return this.http.post<EditAndAddGeneration>(`/api/generations/${modelId}/add-generation`, {name, imageUrl, yearStarted, yearAborted});
