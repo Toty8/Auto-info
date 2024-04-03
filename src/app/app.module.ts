@@ -21,7 +21,6 @@ import { SpecificationModule } from './specification/specification.module';
   declarations: [
     AppComponent,
     BrandsListComponent,
-    ModelsListComponent,
     NotFoundComponent,
     AuthenticateComponent,
   ],

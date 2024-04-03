@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="new-specification-border">
+        <div class="header-background">
+            <span>New Specification</span>
+        </div>
+        <form #form="ngForm" (ngSubmit)="addSpecification(form)">
+            <div class="new-specification-prop">
+                <label for="name">Specification name<span class="red">*</span></label>
+                <input type="text" name="name" id="name" ngModel #inputSpecificationName="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationName.touched">
+                    <p class="error" *ngIf="inputSpecificationName.errors?.['required']">
+                        Specification name is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-specification-prop">
+                <label for="imageUrl">Image Url<span class="red">*</span></label>
+                <input type="text" name="imageUrl" id="imageUrl" ngModel #inputSpecificationImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
+                <ng-container *ngIf="inputSpecificationImageUrl.touched">
+                    <p class="error" *ngIf="inputSpecificationImageUrl.errors?.['required']">
+                        Image Url is required.
+                    </p>
+                    <p class="error" *ngIf="inputSpecificationImageUrl.errors?.['imageValidator']">
+                        Image Url must be valid.
+                    </p>
+                </ng-container>
+            </div>
+            <div class="new-specification-prop">
+                <label for="weight">Specification weight<span class="red">*</span></label>
+                <input type="number" name="weight" id="weight" ngModel #inputSpecificationWeight="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationWeight.touched">
+                    <p class="error" *ngIf="inputSpecificationWeight.errors?.['required']">
+                        Specification weight is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-specification-prop">
+                <label for="power">Specification power<span class="red">*</span></label>
+                <input type="number" name="power" id="power" ngModel #inputSpecificationPower="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationPower.touched">
+                    <p class="error" *ngIf="inputSpecificationPower.errors?.['required']">
+                        Specification power is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-specification-prop">
+                <label for="torque">Specification torque<span class="red">*</span></label>
+                <input type="number" name="torque" id="torque" ngModel #inputSpecificationTorque="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationTorque.touched">
+                    <p class="error" *ngIf="inputSpecificationTorque.errors?.['required']">
+                        Specification torque is required.
+                    </p>
+                </ng-container>
+
+            </div>
+
+            <div class="new-specification-prop">
+                <label for="engineType">Specification engine type<span class="red">*</span></label>
+                <input type="text" name="engineType" id="engineType" ngModel #inputSpecificationEngineType="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationEngineType.touched">
+                    <p class="error" *ngIf="inputSpecificationEngineType.errors?.['required']">
+                        Specification engine type is required.
+                    </p>
+                </ng-container>
+
+            </div>
+
+            <div class="new-specification-prop">
+                <label for="transmission">Specification transmission<span class="red">*</span></label>
+                <input type="text" name="transmission" id="transmission" ngModel #inputSpecificationTransmission="ngModel" required>
+
+                <ng-container *ngIf="inputSpecificationTransmission.touched">
+                    <p class="error" *ngIf="inputSpecificationTransmission.errors?.['required']">
+                        Specification transmission is required.
+                    </p>
+                </ng-container>
+
+            </div>
+            <div class="new-specification-buttons">
+                <button [disabled]="form.invalid">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

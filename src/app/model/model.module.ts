@@ -5,6 +5,7 @@ import { ModelRoutingModule } from './model-routing.module';
 import { AddModelComponent } from './add-model/add-model.component';
 import { FormsModule } from '@angular/forms';
 import { EditModelComponent } from './edit-model/edit-model.component';
+import { ModelsListComponent } from './models-list/models-list.component';
 
 
 
@@ -12,7 +13,8 @@ import { EditModelComponent } from './edit-model/edit-model.component';
   declarations: [
   
     AddModelComponent,
-       EditModelComponent
+    ModelsListComponent,
+    EditModelComponent
   ],
   imports: [
     CommonModule,
