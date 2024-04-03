@@ -26,5 +26,10 @@ export class SpecificationsListComponent implements OnInit {
       });
     });
   }
-
+  
+  delete(id: string): void{
+    this.specificationService.deleteSpecification(id).subscribe(() => {
+      this.ngOnInit();
+    });
+  }
 }
