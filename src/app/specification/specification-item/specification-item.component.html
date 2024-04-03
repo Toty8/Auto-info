@@ -1,0 +1,18 @@
+<div class="loader" *ngIf="isLoading">
+    <app-loader />
+</div>
+<div *ngIf="!isLoading && specification" class="container">
+    <img class="car-image" src="{{specification.imageUrl}}" alt="Car Image">
+    <div class="car-info">
+        <h2>{{specification.generation.model.brand.name}} {{specification.generation.model.name}} {{specification.generation.name}} {{specification.name}}</h2>
+        <div class="car-details">
+            <p><strong>Year Started Production:</strong> {{specification.generation.yearStarted}}</p>
+            <p *ngIf="specification.generation.yearAborted"><strong>Year Aborted Production:</strong> {{specification.generation.yearAborted}}</p>
+            <p><strong>Weight:</strong> {{specification.weight}} kg</p>
+            <p><strong>Power:</strong> {{specification.power}} hp</p>
+            <p><strong>Torque:</strong> {{specification.torque}} Nm</p>
+            <p><strong>Engine Type:</strong> {{specification.engineType}}</p>
+            <p><strong>Transmission Type:</strong> {{specification.transmission}}</p>
+        </div>
+    </div>
+</div>

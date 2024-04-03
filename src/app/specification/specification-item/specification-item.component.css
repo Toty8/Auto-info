@@ -1,0 +1,26 @@
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.car-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.car-info {
+    margin-top: 20px;
+}
+.car-info h2 {
+    margin-top: 0;
+    color: #333;
+}
+.car-details {
+    margin-top: 10px;
+}
+.car-details p {
+    margin: 5px 0;
+}

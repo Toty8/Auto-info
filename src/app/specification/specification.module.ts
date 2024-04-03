@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { SpecificationsListComponent } from './specifications-list/specifications-list.component';
 import { AddSpecificationComponent } from './add-specification/add-specification.component';
 import { EditSpecificationComponent } from './edit-specification/edit-specification.component';
+import { SpecificationItemComponent } from './specification-item/specification-item.component';
 
 
 
@@ -13,7 +14,8 @@ import { EditSpecificationComponent } from './edit-specification/edit-specificat
   declarations: [
     SpecificationsListComponent,
     AddSpecificationComponent,
-    EditSpecificationComponent
+    EditSpecificationComponent,
+    SpecificationItemComponent
   ],
   imports: [
     CommonModule,
