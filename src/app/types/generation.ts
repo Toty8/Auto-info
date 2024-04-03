@@ -1,9 +1,10 @@
 import { Model } from "./model"
+import { Specification } from "./specification"
 import { User } from "./user"
 
 export interface Generation{
     imageUrl: string
-    generations: string[]
+    specifications: Specification[]
     name: string
     _id: string
     yearStarted: number
