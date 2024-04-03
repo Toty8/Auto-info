@@ -4,7 +4,7 @@
             <span>Edit Model</span>
         </div>
         <form #form="ngForm" (ngSubmit)="editModel(form)">
-            <div class="edit-model-name">
+            <div class="edit-model-prop">
                 <label for="name">Model name<span class="red">*</span></label>
                 <input type="text" name="name" id="name" ngModel="{{model.name}}" #inputModelName="ngModel" required>
 
@@ -15,7 +15,7 @@
                 </ng-container>
 
             </div>
-            <div class="edit-model-image">
+            <div class="edit-model-prop">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
                 <input type="text" name="imageUrl" id="imageUrl" ngModel="{{model.imageUrl}}" #inputModelImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
                 <ng-container>

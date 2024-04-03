@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 
-.edit-model-name input, .edit-model-image input {
+.edit-model-prop input{
     width: 100%;
     border-radius: 0.3em;
     padding: 0.35em;

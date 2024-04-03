@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 
-.edit-generation-name input, .edit-generation-image input, .edit-generation-yearStarted input, .edit-generation-yearAborted input {
+.edit-generation-prop input{
     width: 100%;
     border-radius: 0.3em;
     padding: 0.35em;

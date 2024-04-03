@@ -4,7 +4,7 @@
             <span>Edit Generation</span>
         </div>
         <form #form="ngForm" (ngSubmit)="editGeneration(form)">
-            <div class="edit-generation-name">
+            <div class="edit-generation-prop">
                 <label for="name">Generation name<span class="red">*</span></label>
                 <input type="text" name="name" id="name" ngModel="{{generation.name}}" #inputGenerationName="ngModel" required>
 
@@ -15,7 +15,7 @@
                 </ng-container>
 
             </div>
-            <div class="edit-generation-image">
+            <div class="edit-generation-prop">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
                 <input type="text" name="imageUrl" id="imageUrl" ngModel="{{generation.imageUrl}}" #inputGenerationImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
                 <ng-container>
@@ -27,7 +27,7 @@
                     </p>
                 </ng-container>
             </div>
-            <div class="edit-generation-yearStarted">
+            <div class="edit-generation-prop">
                 <label for="yearStarted">Generation Year Started<span class="red">*</span></label>
                 <input type="number" name="yearStarted" id="yearStarted" ngModel="{{generation.yearStarted}}" #inputGenerationYearStarted="ngModel" required>
 
@@ -38,7 +38,7 @@
                 </ng-container>
 
             </div>
-            <div class="edit-generation-yearAborted">
+            <div class="edit-generation-prop">
                 <label for="yearAborted">Generation Year Started (optional)</label>
                 <input type="number" name="yearAborted" id="yearAborted" ngModel="{{generation.yearAborted}}" #inputGenerationYearAborted="ngModel">
             </div>

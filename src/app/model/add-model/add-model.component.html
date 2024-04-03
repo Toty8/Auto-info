@@ -4,7 +4,7 @@
             <span>New Model</span>
         </div>
         <form #form="ngForm" (ngSubmit)="addModel(form)">
-            <div class="new-model-name">
+            <div class="new-model-prop">
                 <label for="name">Model name<span class="red">*</span></label>
                 <input type="text" name="name" id="name" ngModel #inputModelName="ngModel" required>
 
@@ -15,7 +15,7 @@
                 </ng-container>
 
             </div>
-            <div class="new-model-image">
+            <div class="new-model-prop">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
                 <input type="text" name="imageUrl" id="imageUrl" ngModel #inputModelImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
                 <ng-container *ngIf="inputModelImageUrl.touched">

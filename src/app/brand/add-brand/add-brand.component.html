@@ -4,7 +4,7 @@
             <span>New Brand</span>
         </div>
         <form #form="ngForm" (ngSubmit)="addBrand(form)">
-            <div class="new-brand-name">
+            <div class="new-brand-prop">
                 <label for="name">Brand name<span class="red">*</span></label>
                 <input type="text" name="name" id="name" ngModel #inputBrandName="ngModel" required>
 
@@ -15,7 +15,7 @@
                 </ng-container>
 
             </div>
-            <div class="new-brand-image">
+            <div class="new-brand-prop">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
                 <input type="text" name="imageUrl" id="imageUrl" ngModel #inputBrandImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
                 <ng-container *ngIf="inputBrandImageUrl.touched">

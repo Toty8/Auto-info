@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 
-.edit-brand-name input, .edit-brand-image input {
+.edit-brand-prop input{
     width: 100%;
     border-radius: 0.3em;
     padding: 0.35em;

@@ -4,7 +4,7 @@
             <span>Edit Brand</span>
         </div>
         <form #form="ngForm" (ngSubmit)="editBrand(form)">
-            <div class="edit-brand-name">
+            <div class="edit-brand-prop">
                 <label for="name">Brand name<span class="red">*</span></label>
                 <input type="text" name="name" id="name" ngModel="{{brand.name}}" #inputBrandName="ngModel" required>
 
@@ -15,7 +15,7 @@
                 </ng-container>
 
             </div>
-            <div class="edit-brand-image">
+            <div class="edit-brand-prop">
                 <label for="imageUrl">Image Url<span class="red">*</span></label>
                 <input type="text" name="imageUrl" id="imageUrl" ngModel="{{brand.imageUrl}}" #inputBrandImageUrl="ngModel" required [appImageUrl]="imageURLRegEx">
                 <ng-container>
