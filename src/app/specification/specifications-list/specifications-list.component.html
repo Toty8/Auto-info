@@ -1,0 +1,30 @@
+<main>
+    <div class="loader" *ngIf="isLoading">
+        <app-loader />
+    </div>
+    <div *ngIf="!isLoading && generation" class="title">    
+        <div class="noData" *ngIf="generation.specifications.length == 0">
+            <h1>There are no specifications yet!</h1>
+        </div>   
+        <div *ngFor="let specification of generation.specifications" class="container">
+            <div class="name-wrapper">
+                <div class="specification-item">
+                    <div routerLink='/specifications/{{specification._id}}'>
+                        <h2 class="specificationLink">{{generation.model.brand.name}} {{generation.model.name}} {{generation.name}} {{specification.name}}</h2>
+                    </div>
+                    <div>
+                        <img class="image" src="{{specification.imageUrl}}">
+                    </div>
+                    <div>
+                        <h2>Last Edited by: {{specification.userId.username}}</h2>
+                        <h5>Account created {{specification.userId.created_at | accountAge}}!</h5>
+                    </div>
+                    <div class="specification-buttons">
+                        <button routerLink='/specifications/{{specification._id}}/edit'>Edit</button>
+                        <!-- <button (click)="delete(specification._id)" class="delete-btn">Delete</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
